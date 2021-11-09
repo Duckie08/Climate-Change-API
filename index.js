@@ -64,7 +64,7 @@ app.get("/news/:newspaperId", async (req, res) => {
       const $ = cheerio.load(html);
       const specifiActicles = [];
 
-      $('a.contains("climate")', html).forEach(function () {
+      $('a:contains("climate")', html).each(function () {
         const title = $(this).text;
         const url = $(this).attr("href");
 
